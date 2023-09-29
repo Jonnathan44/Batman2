@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js" async></script>
+    <title>Batgame</title>
+</head>
+<body>
+    <section id="presentation" class="centre">
+        <div id="presentation2" class="disposition">
+            <nav>
+                <img src="Media/logohome.png" alt="">
+                <a href="index.html" id="home">HOME</a>
+                <a href="#" id="game">GAME</a>
+            </nav>
+            <div id="welcome2" style="position: relative;" class="slide">
+                <p>LET'S PLAY A <br>LITTLE GAME...</p>
+            </div>
+            <div id="batContact">
+                <img src="Media/logo_bat_flèche.png" alt="" class="bat1">
+                <a href="#"><img src="Media/icon_facebook.png" alt=""></a>
+                <a href="#"><img src="Media/icon_ig.png" alt=""></a>
+                <a href="#"><img src="Media/icon_tw.png" alt=""></a>
+                <img src="Media/logo_bat_flèche_2.png" alt="" class="bat2">
+            </div>   
+            
+            <button>
+                <img src="Media/flèche_down_header.png" alt="">
+            </button>
+        </div>
+    </section>
+    <div id="gameContent">
+        <div id="o1">
+            <p>CONNAISSEZ-VOUS BIEN LE CHEVALIER NOIR?</p>
+            <img src="Media/Batgame_2.png" alt="" class="reveal">
+        </div>
+        <div id="quizzTemplate">
+            <p id="compteur"></p>
+            <div id="questions">
+                <div id="image" class="reveal"></div>
+                <div id="liste">
+                    <p id="question"></p>
+                    <div><input type="checkbox" name="choix1" id="choix1"> <label for="choix1"></label></div>
+                    <div><input type="checkbox" name="choix2" id="choix2"> <label for="choix2"></label></div>
+                    <div><input type="checkbox" name="choix3" id="choix3"> <label for="choix3"></label></div>
+                    <div style="display: none;"><input type="checkbox" name="choix4" id="choix4"> <label for="choix4"></label></div>
+                </div>
+            </div>
+        </div>
+        <button id="commencer" style="margin-top: 12rem;">DEMARRER LE QUIZZ</button>
+    </div>
+    <div id="resultat">
+        <p id="scoreFinal">05/15 C'EST PAS MAL DU TOUT</p>
+        <P id="commentaire">Oula! Heureusement que le Riddler est sous les verrours... il faut que vous vous repassiez les films, cette fois en enlevant peut-être le masque qui vous a bloqué la vue! Allez, rien n'est perdu!</P>
+        <button id="recommencer">RECOMMENCER LE QUIZZ</button>
+    </div>
+   
+    <div style="display: flex; margin-top: 16rem; align-items: center; column-gap: 1rem;"> <img src="Media/icon_WB.png" alt="" style="width: 1.5rem; height: 1.5rem;">
+    <p style="font-size: 0.7rem;">Ce projet respecte l’univers cinématographique des films Batman récents. Version Nolan & Snyder & Reeves</p></div>
+    <div  style="display: flex; justify-content: center; align-items: flex-start; column-gap: 2rem; margin-bottom: 50px;">
+        <img style="margin-top: auto; margin-bottom: auto;" src="Media/logo_sayna_white.png" alt="">
+        <img style="margin-top: auto; margin-bottom: auto;" src="Media/icon_x.png" alt="">
+        <img style="margin-top: auto; margin-bottom: auto;" src="Media/icon_DC.png" alt="">
+        <img style="margin-top: auto; margin-bottom: auto;" src="Media/icon_facebook.png" alt="">
+        <img style="margin-top: auto; margin-bottom: auto;" src="Media/icon_ig.png" alt="">
+        <img style="margin-top: auto; margin-bottom: auto;" src="Media/icon_tw.png" alt="">
+    </div>
+    <div></div>
+</body>
+</html>
+
+<canvas style="position: absolute;" width="50" height="20" id="canvas"></canvas>

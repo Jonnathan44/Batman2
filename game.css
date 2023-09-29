@@ -1,0 +1,279 @@
+{
+    --noir: black;
+    --blanc: white;
+    --gris: rgb(112, 110, 110);
+    --rouge: rgb(165, 30, 30);
+}
+
+/*************************************************************************************/
+/*initialisation des styles de la page*/
+*{
+    color: var(--blanc);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .9rem;
+    box-sizing: content-box;
+}
+html{height: 100%; width: 100%;}
+
+
+/*******************************************************************************************/
+/*Mise en place de différentes styles prédefinies pour des classes spécifiques*/
+
+.disposition {
+    margin: 0px 80px;
+    border: 2px solid var(--gris);
+    border-top: none;
+    border-bottom: none;
+    display: grid;
+    justify-items: stretch;
+    grid-template-rows: 1fr 2.5fr;
+    row-gap: 2rem;
+    padding: 0rem 5rem;
+}
+.reveal {
+    position: relative;
+    transform: scale(0);
+    opacity: 0;
+    transition: 1.2s all ease;
+}
+
+.reveal.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.slide {
+    position: relative;
+    top: -100px;
+    left: -150px;
+    opacity: 0;
+    transition: 1s all ease;
+}
+.slide.active1 {
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+}
+
+
+/**************************************************************************************/
+/*Styles pour les éléments de mêmes types*/
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background-color: var(--noir);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    scroll-behavior: smooth;
+}   
+a{text-decoration: none;}
+#game {
+    font-weight: 600;
+    text-decoration: underline;
+}
+nav a{
+    font-size: 1.8rem;
+    cursor: pointer;
+
+}
+
+nav img{
+    width: auto;
+    height: 3rem;
+    margin-right: auto;
+}
+
+button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+
+/*****************************************************************************************************/
+/*Styles pour des éléments spécifiques*/
+
+#presentation{
+    background-image: url("Media/Batgame_1.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-origin: border-box;
+    margin-bottom: 4rem;
+}
+#presentation nav{
+    padding: 3rem 5rem;
+    display: flex;
+    column-gap: 2rem;
+    border-bottom: 2px solid var(--gris);
+}
+
+#welcome2{
+    padding: 4rem 4rem;  
+    display: block;
+}
+#welcome2 p {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+#batContact{
+    position: absolute; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    row-gap: 2rem;
+    column-gap: 2rem;
+    right: 30px; 
+    top: 16rem;
+}
+#presentation2{
+    grid-template-rows: 1fr 4fr;
+    padding: 0rem;
+}
+
+
+
+#gameContent #o1, #gameContent{
+    display: flex;
+    margin-top: 4rem;
+    flex-direction: column;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#quizzTemplate{
+    margin-top: 4rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120%;
+    height: 20rem;
+}
+#compteur{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 4rem;
+}
+#questions{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 2rem;
+}
+#question{
+    font-size: 1.5rem;
+}
+#image{
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    /*width: 16rem;
+    height: 26rem;*/
+}
+#liste{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 1rem;
+    padding: 4rem 0rem;
+    width: 40rem;
+}
+#liste input{
+    width: 1rem;
+    height: 1rem;
+}
+#liste div{
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    column-gap: 1rem;
+}
+#liste label {
+    font-size: 1.5rem;
+}
+#gameContent #o1 p{
+    font-size: 2rem;
+}
+#gameContent button, #resultat button{
+    margin-top: 2rem;
+    width: 20rem;
+    height: 4rem;
+    background-image: linear-gradient(to right, rgb(118, 115, 134), rgb(194, 147, 46));
+    font-size: large;
+    margin-left: auto;
+    margin-right: auto;
+}
+#resultat{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    row-gap: 3rem;
+    width: 50%;
+    background-image: linear-gradient(to bottom, rgb(138, 136, 136, 0.6), rgb(167, 110, 46, 0.6));
+
+}
+#resultat p {text-align: center;}
+#resultat p:first-child {
+    font-size: 1.5rem;
+}
+
+
+/**************************************************************************************/
+/*Gestion du responsive*/
+@media (max-width: 1030px) {
+    nav{
+        justify-content: center;
+        align-items: center;
+    }
+    nav img{
+        display: none;
+    }
+    .disposition{
+        margin: 0rem;
+    }
+    #batContact{
+        position: relative;
+        top: 50px;
+        right: 0px;
+        flex-direction: row;
+    }
+    .bat1, .bat2{
+        transform: rotate(-90deg);
+    }
+
+}
+
+@media (max-width: 990px){
+    #welcome{
+        padding: 0rem;
+    }
+    .disposition{
+        padding: 0rem;
+        justify-items: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 670px){
+    .disposition div p{
+        width: 100%;
+    }
+    #image{
+        display: none;
+
+    }
+   #questions{
+        margin-left: 14rem;
+   } 
+}
+
